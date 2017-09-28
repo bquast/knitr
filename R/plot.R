@@ -15,7 +15,9 @@ auto_exts = c(
 
   svglite = 'svg',
 
-  tikz = 'tikz'
+  tikz = 'tikz',
+  
+  gridsvg = 'svg'
 )
 
 dev2ext = function(x) {
@@ -33,7 +35,7 @@ dev2ext = function(x) {
 check_dev = function(dev) {
   if (exists(dev, mode = 'function', envir = knit_global()))
     get(dev, mode = 'function', envir = knit_global()) else
-      stop('the graphical device', sQuote(dev), 'does not exist (as a function)')
+      NULL # stop('the graphical device', sQuote(dev), 'does not exist (as a function)')
 }
 
 # quartiz devices under Mac
